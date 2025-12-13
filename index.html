@@ -663,17 +663,68 @@ footer {
 </section>
 
 <!-- FLOATING BUTTONS -->
-<a class="float-btn whatsapp" href="https://wa.me/212753205588" target="_blank">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<!-- FLOATING BUTTONS -->
+<div id="floating-buttons">
+    
+    <!-- WhatsApp -->
+    <a href="https://wa.me/212753205588" target="_blank" class="fb-btn fb-whatsapp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
-<a class="float-btn call" href="tel:+212753205588">
-  <i class="fa-solid fa-phone"></i>
-</a>
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/hceelite" target="_blank" class="fb-btn fb-instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
 
-<a class="float-btn insta" href="https://www.instagram.com/hceelite" target="_blank">
-  <i class="fa-brands fa-instagram"></i>
-</a>
+    <!-- Call -->
+    <a href="tel:+212753205588" class="fb-btn fb-call">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+</div>
+
+<!-- BUTTON STYLES -->
+<style>
+#floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    z-index: 99999;
+}
+
+/* Base style for round buttons */
+.fb-btn {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: white !important;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+
+/* WhatsApp */
+.fb-whatsapp {
+    background: #25D366;
+}
+
+/* Instagram Gradient */
+.fb-instagram {
+    background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+}
+
+/* Call Button */
+.fb-call {
+    background: #071A2B;
+}
+</style>
+
 
 <!-- FOOTER -->
 <footer>
