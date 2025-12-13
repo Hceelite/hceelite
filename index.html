@@ -279,7 +279,131 @@
 </footer>
 
 <!-- SCRIPT WILL BE ADDED IN PART 2 -->
-<script src="script.js"></script>
+
+/* ================================
+   LANGUAGE SWITCHER
+=================================*/
+const langButtons = document.querySelectorAll(".lang-selector span");
+const enElements = document.querySelectorAll(".text-en");
+const frElements = document.querySelectorAll(".text-fr");
+const arElements = document.querySelectorAll(".text-ar");
+
+function switchLanguage(lang) {
+    // Hide all texts
+    enElements.forEach(el => el.style.display = "none");
+    frElements.forEach(el => el.style.display = "none");
+    arElements.forEach(el => el.style.display = "none");
+
+    // Switch direction for Arabic
+    if (lang === "ar") {
+        document.body.style.direction = "rtl";
+        document.body.style.textAlign = "right";
+    } else {
+        document.body.style.direction = "ltr";
+        document.body.style.textAlign = "left";
+    }
+
+    // Show selected language
+    if (lang === "en") enElements.forEach(el => el.style.display = "block");
+    if (lang === "fr") frElements.forEach(el => el.style.display = "block");
+    if (lang === "ar") arElements.forEach(el => el.style.display = "block");
+}
+
+// Add click events
+langButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const lang = btn.dataset.lang;
+        switchLanguage(lang);
+    });
+});
+
+
+/* ================================
+   SCROLL ANIMATIONS
+=================================*/
+const animatedElements = document.querySelectorAll("section, .service-box, .testimonial-box, .gallery-grid img");
+
+function animateOnScroll() {
+    animatedElements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+            el.style.opacity = "1";
+            el.style.transform = "translateY(0)";
+        }
+    });
+}
+
+// Initial animation styles
+animatedElements.forEach(el => {
+    el.style.opacity = "0";
+    el.style.transform = "translateY(30px)";
+    el.style.transition = "all 0.7s ease-out";
+});
+
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
+
+
+/* ================================
+   GALLERY LIGHTBOX
+=================================*/
+const galleryImages = document.querySelectorAll(".gallery-grid img");
+
+// Create overlay
+const overlay = document.createElement("div");
+overlay.style.position = "fixed";
+overlay.style.top = "0";
+overlay.style.left = "0";
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+overlay.style.background = "rgba(0,0,0,0.8)";
+overlay.style.display = "none";
+overlay.style.justifyContent = "center";
+overlay.style.alignItems = "center";
+overlay.style.zIndex = "9999";
+
+const overlayImg = document.createElement("img");
+overlayImg.style.maxWidth = "90%";
+overlayImg.style.maxHeight = "90%";
+overlay.appendChild(overlayImg);
+
+document.body.appendChild(overlay);
+
+// Show lightbox
+galleryImages.forEach(img => {
+    img.addEventListener("click", () => {
+        overlayImg.src = img.src;
+        overlay.style.display = "flex";
+    });
+});
+
+// Close when clicking outside
+overlay.addEventListener("click", () => {
+    overlay.style.display = "none";
+});
+
+
+/* ================================
+   AJAX CONTACT FORM (No Redirect)
+=================================*/
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch("https://formsubmit.co/contact@hceelite.ma", {
+        method: "POST",
+        body: data
+    })
+    .then(response => {
+        if (response.ok) {
+            document.getElementById("formMessage").style.display = "block";
+            form.reset();
+        }
+    })
+    .catch(error => console.log("Error:", error));
+});
 
 </body>
 </html>
