@@ -406,24 +406,41 @@ h2 {
 }
 
 /* GALLERY */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 class="text-en">Gallery</h2>
+    <h2 class="text-fr" style="display:none;">Galerie</h2>
+    <h2 class="text-ar" style="display:none; direction:rtl;">معرض الصور</h2>
 
-.gallery-grid img {
-  width: 100%;
-  border-radius: 12px;
-  height: 200px;
-  object-fit: cover;
-  cursor: pointer;
-  transition: 0.3s;
-}
+    <div class="gallery-grid">
 
-.gallery-grid img:hover {
-  transform: scale(1.04);
-}
+        <!-- Cleaning Service -->
+        <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2bdc0?auto=format&fit=crop&w=900&q=60" alt="Cleaning service">
+
+        <!-- Office Cleaning -->
+        <img src="https://images.unsplash.com/photo-1598514982668-6e4c2e12e36b?auto=format&fit=crop&w=900&q=60" alt="Office cleaning">
+
+        <!-- Garden & Green Areas -->
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=900&q=60" alt="Garden maintenance">
+
+        <!-- Lawn & Outdoor Care -->
+        <img src="https://images.unsplash.com/photo-1501004318641-33d6c1d2e2df?auto=format&fit=crop&w=900&q=60" alt="Green space maintenance">
+
+        <!-- Pest Control -->
+        <img src="https://images.unsplash.com/photo-1612135281267-8dd38903bf25?auto=format&fit=crop&w=900&q=60" alt="Pest control">
+
+        <!-- Disinfection Service -->
+        <img src="https://images.unsplash.com/photo-1584602498371-046edc8860d0?auto=format&fit=crop&w=900&q=60" alt="Disinfection service">
+
+        <!-- Technical Maintenance -->
+        <img src="https://images.unsplash.com/photo-1597004895281-397bb2a33f8c?auto=format&fit=crop&w=900&q=60" alt="Technical maintenance">
+
+        <!-- HVAC / AC Maintenance -->
+        <img src="https://images.unsplash.com/photo-1581092787769-389c79d3d7f1?auto=format&fit=crop&w=900&q=60" alt="AC technical maintenance">
+
+    </div>
+</section>
+
 
 /* TESTIMONIALS */
 .testimonials {
