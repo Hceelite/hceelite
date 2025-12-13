@@ -3,51 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HCE Elite – Homecare Expertise Elite</title>
+<title>HCE Elite – Professional Facility Services in Morocco</title>
+
+<!-- SEO -->
+<meta name="description" content="HCE Elite provides premium cleaning, gardening, pest control, technical maintenance, and facility services across all Moroccan cities.">
+<meta name="keywords" content="cleaning Morocco, maintenance Morocco, gardening Morocco, pest control Morocco, facility services Morocco, homecare services Rabat, Casablanca, Morocco">
+<meta name="author" content="HCE Elite">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
-    body {
-        margin:0; font-family: Arial, sans-serif; background:#ffffff; color:#0a1a2a;
-    }
+    body { margin:0; font-family: Arial, sans-serif; background:#ffffff; color:#0a1a2a; }
+
     /* NAVBAR */
     nav {
         background:#0a1a2a; padding:15px 30px; position:fixed; top:0; left:0; width:100%;
         display:flex; justify-content:space-between; align-items:center; z-index:999;
     }
-    nav a { color:white; text-decoration:none; margin:0 15px; font-size:16px; }
+    nav a { color:white; text-decoration:none; margin:0 20px; font-size:16px; }
     nav a:hover { color:#b6933c; }
 
-    /* HERO SECTION */
+    .lang-selector {
+        color:white; font-weight:bold; cursor:pointer; font-size:14px;
+    }
+    .lang-selector span { margin-left:10px; }
+    .lang-selector span:hover { color:#b6933c; }
+
+    /* HERO */
     header {
         background:#0a1a2a; padding:160px 20px 120px; text-align:center; color:white;
     }
-    header img { width:150px; margin-bottom:20px; }
-    header h1 { font-size:2.5rem; margin:10px 0; }
-    header p { font-size:1.2rem; opacity:0.9; }
+    header img { width:140px; margin-bottom:20px; }
+    header h1 { font-size:2.5rem; margin-bottom:10px; }
+    header p { font-size:1.15rem; opacity:0.9; }
+    .quote-btn {
+        background:#b6933c; padding:12px 25px; color:white; border-radius:8px;
+        text-decoration:none; font-size:18px; display:inline-block; margin-top:20px;
+    }
+    .quote-btn:hover { background:#8a732e; }
 
-    /* SECTIONS */
+    /* SECTION */
     section { padding:70px 20px; max-width:1100px; margin:auto; }
-
     h2 { text-align:center; color:#0a1a2a; font-size:2rem; margin-bottom:40px; }
 
-    /* SERVICES GRID */
-    .services {
-        display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-        gap:25px;
+    /* SERVICES */
+    .services { 
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; 
     }
     .service-box {
-        background:white; border:1px solid #ddd; border-radius:10px;
-        padding:25px; text-align:center; transition:.3s;
+        background:white; border:1px solid #ddd; border-radius:10px; padding:25px;
+        text-align:center; transition:.3s;
     }
-    .service-box:hover {
-        box-shadow:0 4px 12px rgba(0,0,0,0.12);
-        transform:translateY(-4px);
+    .service-box:hover { box-shadow:0 4px 12px rgba(0,0,0,0.12); transform:translateY(-4px); }
+    .service-box i { font-size:42px; color:#b6933c; margin-bottom:15px; }
+    .service-box h3 { color:#b6933c; }
+
+    /* GALLERY */
+    .gallery-grid {
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;
     }
-    .service-box i {
-        font-size:40px; color:#b6933c; margin-bottom:15px;
+    .gallery-grid img {
+        width:100%; border-radius:10px; height:200px; object-fit:cover; cursor:pointer;
+        transition:0.3s;
     }
-    .service-box h3 {
-        color:#b6933c; margin-bottom:10px;
+    .gallery-grid img:hover { transform:scale(1.05); }
+
+    /* TESTIMONIALS */
+    .testimonials {
+        display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:25px;
     }
+    .testimonial-box {
+        background:#f7f7f7; padding:25px; border-radius:10px; border:1px solid #ddd;
+        font-style:italic;
+    }
+    .testimonial-name { margin-top:10px; font-weight:bold; color:#b6933c; }
 
     /* CONTACT FORM */
     form {
@@ -64,105 +94,192 @@
     }
     button:hover { background:#8a732e; }
 
-    /* WHATSAPP FLOATING BUTTON */
-    .whatsapp-btn {
-        position:fixed; bottom:20px; right:20px; background:#25D366; color:white;
-        padding:15px; border-radius:50px; font-size:25px; text-decoration:none;
-        box-shadow:0 4px 10px rgba(0,0,0,0.3);
-        z-index:999;
+    #formMessage {
+        text-align:center; color:green; font-weight:bold; font-size:18px;
+        display:none; margin-top:20px;
     }
 
-    /* FOOTER */
+    /* FLOATING BUTTONS */
+    .float-btn {
+        position:fixed; bottom:20px; right:20px; z-index:999; cursor:pointer;
+    }
+    .float-btn i { font-size:30px; color:white; background:#25D366; padding:18px;
+        border-radius:50%; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    .call-btn {
+        right:80px;
+    }
+    .call-btn i { background:#0a1a2a; }
+
     footer {
         background:#0a1a2a; color:white; text-align:center; padding:25px; margin-top:50px;
     }
 </style>
-
-<!-- ICON CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
 
-<!-- NAV -->
+<!-- NAVBAR -->
 <nav>
-    <div style="color:white; font-weight:bold;">HCE Elite</div>
+    <div style="color:white;font-weight:bold;font-size:20px;">HCE Elite</div>
+
     <div>
         <a href="#services">Services</a>
-        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
     </div>
+
+    <div class="lang-selector">
+        <span data-lang="en">🇬🇧 EN</span> |
+        <span data-lang="fr">🇫🇷 FR</span> |
+        <span data-lang="ar">🇲🇦 AR</span>
+    </div>
 </nav>
+
 
 <!-- HERO -->
 <header>
     <img src="logo-hce-elite.png" alt="HCE Elite Logo">
-    <h1>Homecare Expertise Elite</h1>
-    <p>Professional Cleaning, Maintenance & Facility Services</p>
+    <h1 class="text-en">Homecare Expertise Elite</h1>
+    <h1 class="text-fr" style="display:none;">Service d’Entretien Professionnel</h1>
+    <h1 class="text-ar" style="display:none; direction:rtl;">خدمات الصيانة والتنظيف الاحترافية</h1>
+
+    <p class="text-en">Professional Cleaning, Maintenance & Facility Services Across Morocco</p>
+    <p class="text-fr" style="display:none;">Services de nettoyage, maintenance et gestion d’installations au Maroc</p>
+    <p class="text-ar" style="display:none; direction:rtl;">خدمات التنظيف والصيانة وإدارة المرافق في جميع مدن المغرب</p>
+
+    <a href="#contact" class="quote-btn text-en">Request a Quote</a>
+    <a href="#contact" class="quote-btn text-fr" style="display:none;">Demander un devis</a>
+    <a href="#contact" class="quote-btn text-ar" style="display:none; direction:rtl;">طلب عرض سعر</a>
 </header>
 
-<!-- ABOUT -->
-<section id="about">
-    <h2>About Us</h2>
-    <p style="text-align:center; max-width:800px; margin:auto;">
-        HCE Elite provides high-quality services in cleaning, garden maintenance,
-        pest control, and general technical maintenance across residential and commercial spaces.
-        We are committed to excellence, reliability, and premium customer service.
-    </p>
-</section>
+
 
 <!-- SERVICES -->
 <section id="services">
-    <h2>Our Services</h2>
+    <h2 class="text-en">Our Services</h2>
+    <h2 class="text-fr" style="display:none;">Nos Services</h2>
+    <h2 class="text-ar" style="display:none; direction:rtl;">خدماتنا</h2>
+
     <div class="services">
+
         <div class="service-box">
             <i class="fa-solid fa-broom"></i>
-            <h3>Cleaning Services</h3>
-            <p>Professional residential and commercial cleaning solutions.</p>
+            <h3 class="text-en">Cleaning Services</h3>
+            <h3 class="text-fr" style="display:none;">Services de Nettoyage</h3>
+            <h3 class="text-ar" style="display:none; direction:rtl;">خدمات التنظيف</h3>
+            <p class="text-en">Residential & commercial cleaning.</p>
+            <p class="text-fr" style="display:none;">Nettoyage résidentiel et commercial.</p>
+            <p class="text-ar" style="display:none; direction:rtl;">تنظيف المنازل والمكاتب.</p>
         </div>
+
         <div class="service-box">
             <i class="fa-solid fa-tree"></i>
-            <h3>Garden & Green Space Maintenance</h3>
-            <p>Full outdoor and garden maintenance with expert care.</p>
+            <h3 class="text-en">Garden & Green Space Maintenance</h3>
+            <h3 class="text-fr" style="display:none;">Entretien des Jardins</h3>
+            <h3 class="text-ar" style="display:none; direction:rtl;">صيانة الحدائق والمساحات الخضراء</h3>
         </div>
+
         <div class="service-box">
             <i class="fa-solid fa-shield-virus"></i>
-            <h3>Disinfection & Pest Control</h3>
-            <p>Effective sanitization and pest protection for safer spaces.</p>
+            <h3 class="text-en">Disinfection & Pest Control</h3>
+            <h3 class="text-fr" style="display:none;">Désinfection & Anti-Nuisibles</h3>
+            <h3 class="text-ar" style="display:none; direction:rtl;">التطهير ومكافحة الحشرات</h3>
         </div>
+
         <div class="service-box">
             <i class="fa-solid fa-screwdriver-wrench"></i>
-            <h3>General Maintenance & Technical Services</h3>
-            <p>AC, electrical, plumbing & technical support by skilled technicians.</p>
+            <h3 class="text-en">Technical Maintenance</h3>
+            <h3 class="text-fr" style="display:none;">Maintenance Technique</h3>
+            <h3 class="text-ar" style="display:none; direction:rtl;">الصيانة التقنية</h3>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 class="text-en">Gallery</h2>
+    <h2 class="text-fr" style="display:none;">Galerie</h2>
+    <h2 class="text-ar" style="display:none; direction:rtl;">معرض الصور</h2>
+
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2bdc0" alt="">
+        <img src="https://images.unsplash.com/photo-1600585154320-90263ac1f3d8" alt="">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e" alt="">
+        <img src="https://images.unsplash.com/photo-1573804633927-bfcbcd909acd" alt="">
+    </div>
+</section>
+
+
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+    <h2 class="text-en">Testimonials</h2>
+    <h2 class="text-fr" style="display:none;">Témoignages</h2>
+    <h2 class="text-ar" style="display:none; direction:rtl;">آراء العملاء</h2>
+
+    <div class="testimonials">
+        <div class="testimonial-box">
+            “Excellent cleaning service, very professional and punctual.”
+            <div class="testimonial-name">– Sarah K.</div>
+        </div>
+
+        <div class="testimonial-box">
+            “They maintain our garden beautifully. Highly recommended!”
+            <div class="testimonial-name">– Mohamed A.</div>
+        </div>
+
+        <div class="testimonial-box">
+            “Fast response and high-quality maintenance work.”
+            <div class="testimonial-name">– Youssef R.</div>
         </div>
     </div>
 </section>
 
+
+
 <!-- CONTACT -->
 <section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formsubmit.co/contact@hceelite.ma" method="POST">
+    <h2 class="text-en">Contact Us</h2>
+    <h2 class="text-fr" style="display:none;">Contactez-nous</h2>
+    <h2 class="text-ar" style="display:none; direction:rtl;">اتصل بنا</h2>
+
+    <form id="contactForm">
         <input type="text" name="name" placeholder="Full Name" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="phone" placeholder="Phone Number">
-        <textarea name="message" rows="5" placeholder="Your message..." required></textarea>
-        <button type="submit">Send Message</button>
-
-        <!-- FormSubmit Settings -->
-        <input type="hidden" name="_next" value="https://hceelite.ma/#contact">
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="text-en">Send Message</button>
+        <button type="submit" class="text-fr" style="display:none;">Envoyer</button>
+        <button type="submit" class="text-ar" style="display:none; direction:rtl;">إرسال</button>
         <input type="hidden" name="_captcha" value="false">
     </form>
+
+    <p id="formMessage">✔ Your message has been sent!</p>
 </section>
 
-<!-- WHATSAPP BUTTON -->
-<a class="whatsapp-btn" href="https://wa.me/212753205588" target="_blank">
+
+
+<!-- FLOATING BUTTONS -->
+<a class="float-btn" href="https://wa.me/212753205588" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<a class="float-btn call-btn" href="tel:+212753205588">
+    <i class="fa-solid fa-phone"></i>
+</a>
+
+
+
 <!-- FOOTER -->
 <footer>
-    © 2025 HCE Elite – All Rights Reserved
+    © 2025 HCE Elite – Serving All Moroccan Cities
 </footer>
+
+<!-- SCRIPT WILL BE ADDED IN PART 2 -->
+<script src="script.js"></script>
 
 </body>
 </html>
