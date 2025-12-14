@@ -129,7 +129,25 @@
 
 <!-- HERO -->
 <header>
-    <img src="logo-hce-elite.png" alt="HCE Elite Logo">
+    <img src="logo.png" alt="HCE Elite Logo" class="hero-logo">
+    
+    /* ===== HERO LOGO FULL WIDTH ===== */
+.hero-logo {
+    width: 90vw;
+    max-width: none;
+    height: auto;
+    display: block;
+    margin: 0 auto 40px auto;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 95vw;
+        margin-bottom: 25px;
+    }
+}
+
     <h1 class="text-en">Professional cleaning and maintenance services </h1>
     <h1 class="text-fr" style="display:none;">Services professionnelles de nettoyage et de maintenance </h1>
     <h1 class="text-ar" style="display:none; direction:rtl;">خدمات الصيانة والتنظيف الاحترافية</h1>
